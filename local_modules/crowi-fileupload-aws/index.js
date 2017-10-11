@@ -83,7 +83,7 @@ module.exports = function(crowi) {
 
   lib.generateUrl = function(filePath) {
     var awsConfig = getAwsConfig()
-      , url = 'https://' + awsConfig.bucket +'.s3.amazonaws.com/' + filePath;
+      , url = 'https://s3-' + awsConfig.region + '.amazonaws.com/' + awsConfig.bucket + '/' + filePath;
 
     return url;
   };
@@ -162,4 +162,3 @@ module.exports = function(crowi) {
 
   return lib;
 };
-
